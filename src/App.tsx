@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css'
-import Test from "@/tree/test";
+import BaekjeEditor from "@/editor";
 
 function App() {
   return (
       <div>
-        ef
-        <Test/>
+        <BaekjeEditor/>
       </div>
 
   )

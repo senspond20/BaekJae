@@ -17,6 +17,11 @@ const TYPE = {
     BR: "horizontal-rule"
 }
 
+// const SHORTCUTS_MAP = new Map()
+// SHORTCUTS_MAP.set("*", TYPE.LI)
+
+
+
 const SHORTCUTS = {
     "*": TYPE.LI,
     "-": TYPE.LI,
