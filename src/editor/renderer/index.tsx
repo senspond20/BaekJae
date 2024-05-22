@@ -1,7 +1,9 @@
 import {useCallback} from "react";
 import {TYPE} from "@/editor/types";
+import {CustomRenderElementProps, HeadingElement} from "@/editor/types/element";
+import {Heading} from "@/editor/renderer/elements/Heading";
 
-const Element = ({ attributes, children, element }) => {
+const Element = ({element, attributes, children}: CustomRenderElementProps) => {
     switch (element.type) {
         case TYPE.BLOCKQUOTE:
             return <blockquote {...attributes}>{children}</blockquote>
@@ -9,20 +11,8 @@ const Element = ({ attributes, children, element }) => {
             return <ul {...attributes}>{children}</ul>
         case TYPE.LI:
             return <li {...attributes}>{children}</li>
-        case TYPE.H1:
-            return <h1 {...attributes}>{children}</h1>
-        case TYPE.H2:
-            return <h2 {...attributes}>{children}</h2>
-        case TYPE.H3:
-            return <h3 {...attributes}>{children}</h3>
-        case TYPE.H4:
-            return <h4 {...attributes}>{children}</h4>
-        case TYPE.H5:
-            return <h5 {...attributes}>{children}</h5>
-        case TYPE.H6:
-            return <h6 {...attributes}>{children}</h6>
-        case 'katex':
-            return <h3 {...attributes}>{children}</h3>
+        case TYPE.HEADING:
+            return <Heading attributes={attributes} children={children} element={element as HeadingElement}/>
         default:
             return <p {...attributes}>{children}</p>
     }

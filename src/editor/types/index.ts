@@ -1,7 +1,9 @@
+import {Editor, Element, NodeEntry, Path} from "slate";
 
 const TYPE = {
     A: "link",
     BLOCKQUOTE: "block-quote",
+    HEADING: "heading",
     H1: "heading-one",
     H2: "heading-two",
     H3: "heading-three",
@@ -17,23 +19,33 @@ const TYPE = {
     BR: "horizontal-rule"
 }
 
-// const SHORTCUTS_MAP = new Map()
-// SHORTCUTS_MAP.set("*", TYPE.LI)
-
-
-
 const SHORTCUTS = {
     "*": TYPE.LI,
     "-": TYPE.LI,
     "+": TYPE.LI,
     ">": TYPE.BLOCKQUOTE,
-    "#": TYPE.H1,
-    "##": TYPE.H2,
-    "###": TYPE.H3,
-    "####": TYPE.H4,
-    "#####":TYPE.H5,
-    "######":TYPE.H6,
+    "#": TYPE.HEADING,
+    "##": TYPE.HEADING,
+    "###": TYPE.HEADING,
+    "####": TYPE.HEADING,
+    "#####":TYPE.HEADING,
+    "######":TYPE.HEADING,
 };
+
+export type CheckMdParams = {
+    sel: Range
+    editor: Editor, path: Path,
+    match: RegExpMatchArray,
+    el: Element
+    startText: string
+}
+
+export interface MdNode {
+    reg: RegExp,
+    matchKey?: string | RegExp
+    checkAllow?: (ctx: { editor: Editor, node: NodeEntry<Element>, sel: Range }) => boolean
+    run: (ctx: CheckMdParams) => void | boolean
+}
 
 export {
     TYPE,

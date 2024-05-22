@@ -28,7 +28,8 @@ const BaekjeEditor = ()=>{
             ],
         },
         {
-            type: 'heading-two',
+            type: 'heading',
+            level : 2,
             children: [{ text: 'Try it out!' }],
         },
         {
@@ -44,9 +45,11 @@ const BaekjeEditor = ()=>{
         () => withShortcuts(withReact(withHistory(createEditor()))),
         []
     )
+    console.log(editor)
     return (
-        <div>
-           <EditorFrame editor={editor} initialValue={initialValue}/>
+        <div className="editor-wrapper" style={{border: '1px solid #f3f3f3', padding: '0 10px'}}>
+            <EditorFrame editor={editor} initialValue={initialValue}/>
+
         </div>
     );
 }
