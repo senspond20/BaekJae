@@ -10,3 +10,13 @@
 ```
 yarn install 
 ```
+
+## dev
+```
+yarn dev
+```
+
+## build
+```
+yarn build
+```
