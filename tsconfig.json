@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es6", // 'es3', 'es5', 'es2015', 'es2016', 'es2017','es2018', 'esnext' 가능
+    "module": "esnext", //무슨 import 문법 쓸건지 'commonjs', 'amd', 'es2015', 'esnext'
+    "allowJs": true, // js 파일들 ts에서 import해서 쓸 수 있는지
+    "baseUrl": ".",
+    "paths": {
+      "@/*" : ["src/*"]
+    },
+    "allowSyntheticDefaultImports": true
+  }
+}
