@@ -4,19 +4,36 @@
 
 + React 
 + Vite
++ Slate 
 
+```
+.
+├── __tests__
+├── dist
+├── public
+└── src
+    ├── assets
+    ├── editor
+    │   ├── plugins
+    │   ├── types
+    │   └── utils
+    └── tree
+    └── index.html 
+```
 
-## install
+## Get started
+
+### install
 ```
 yarn install 
 ```
 
-## dev
+### dev
 ```
 yarn dev
 ```
 
-## build
+### build
 ```
 yarn build
 ```

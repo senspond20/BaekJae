@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import './App.css'
-import Test from "@/components/test";
+import Test from "@/tree/test";
 
 function App() {
   return (
